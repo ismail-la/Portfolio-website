@@ -1,5 +1,6 @@
 import "./globals.css";
 import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Website Portfolio",
@@ -18,7 +19,10 @@ export default function RootLayout({ children }) {
         />
         <link rel="icon" type="image/jpg" href="./imgs/favicon.jpg" />
       </Head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
