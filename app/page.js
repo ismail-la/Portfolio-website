@@ -4,7 +4,7 @@ import Chatbot from "./components/Chatbot";
 import "./globals.css";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
 import axios from "axios";
-import Projects from "./components/projects";
+import Projects from "./components/Projects";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
