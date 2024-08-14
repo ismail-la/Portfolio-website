@@ -7,34 +7,16 @@ import axios from "axios";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [messageInput, setMessageInput] = useState("");
-  const [messages, setMessages] = useState([
-    {
-      role: "assistant",
-      content: "How can I help you learn more about Adrian and his Resume?",
-    },
-  ]);
+
   // dark mod
   const [darkMode, setDarkMode] = useState(false); // Add dark mode state
-
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     document.body.classList.toggle("dark-mode"); // Toggle dark mode class on body element
   };
 
-  const submitForm = async (e) => {
-    e.preventDefault();
-    let newMessages = [...messages, { role: "user", content: messageInput }];
-    setMessages(newMessages);
-    setMessageInput("");
-  };
-
   const toggleMobileMenu = () => {
     setMenuOpen(!menuOpen);
-  };
-
-  const handleInputChange = (e) => {
-    setMessageInput(e.target.value);
   };
 
   return (
