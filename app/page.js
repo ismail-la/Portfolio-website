@@ -356,7 +356,7 @@ export default function Home() {
                   Demo
                 </button>
               </div>
-              <div class="project-name">E-Commerce Website with Djando</div>
+              <div className="project-name">E-Commerce Website with Djando</div>
             </div>
             <div className="project-item">
               <img
@@ -381,7 +381,7 @@ export default function Home() {
                   Demo
                 </button>
               </div>
-              <div class="project-name">
+              <div className="project-name">
                 ToDo list using ReactJS Application
               </div>
             </div>
@@ -409,7 +409,7 @@ export default function Home() {
                   Demo
                 </button>
               </div>
-              <div class="project-name">Food Delivery App</div>
+              <div className="project-name">Food Delivery App</div>
             </div>
             <div className="project-item">
               <img
@@ -434,7 +434,7 @@ export default function Home() {
                   Demo
                 </button>
               </div>
-              <div class="project-name">Chat Application and Website</div>
+              <div className="project-name">Chat Application and Website</div>
             </div>
             <div className="project-item">
               <img
@@ -460,7 +460,7 @@ export default function Home() {
                   Demo
                 </button>
               </div>
-              <div class="project-name">Work-Out Tracker</div>
+              <div className="project-name">Work-Out Tracker</div>
             </div>
             <div className="project-item">
               <img
@@ -486,7 +486,7 @@ export default function Home() {
                   Demo
                 </button>
               </div>
-              <div class="project-name">JavaScript Music Player</div>
+              <div className="project-name">JavaScript Music Player</div>
             </div>
             <div className="project-item">
               <img src="./imgs/project-7.jpg" alt="AirBnB Clone" width="100%" />
@@ -508,7 +508,7 @@ export default function Home() {
                   Demo
                 </button>
               </div>
-              <div class="project-name">AirBnB Clone</div>
+              <div className="project-name">AirBnB Clone</div>
             </div>
           </div>
         </section>{" "}
@@ -517,66 +517,65 @@ export default function Home() {
             <Chatbot />
           </div>
         </section>
-
         <footer>
           <footer className="footer">
-            <div class="waves">
-              <div class="wave" id="wave1"></div>
-              <div class="wave" id="wave2"></div>
-              <div class="wave" id="wave3"></div>
-              <div class="wave" id="wave4"></div>
+            <div className="waves">
+              <div className="wave" id="wave1"></div>
+              <div className="wave" id="wave2"></div>
+              <div className="wave" id="wave3"></div>
+              <div className="wave" id="wave4"></div>
             </div>
-            <ul class="social-icon">
-              <li class="social-icon__item">
-                <a class="social-icon__link" href="https://x.com/MrLahbari">
+            <ul className="social-icon">
+              <li className="social-icon__item">
+                <a className="social-icon__link" href="https://x.com/MrLahbari">
                   <ion-icon name="logo-twitter"></ion-icon>
                 </a>
               </li>
-              <li class="social-icon__item">
+              <li className="social-icon__item">
                 <a
-                  class="social-icon__link"
+                  className="social-icon__link"
                   href="https://www.linkedin.com/in/ismail-lahbari/"
                 >
                   <ion-icon name="logo-linkedin"></ion-icon>
                 </a>
               </li>
-              <li class="social-icon__item">
+              <li className="social-icon__item">
                 <a
-                  class="social-icon__link"
+                  className="social-icon__link"
                   href="https://github.com/ismail-la"
                 >
                   <ion-icon name="logo-GitHub"></ion-icon>
                 </a>
               </li>
             </ul>
-            <ul class="menu">
-              <li class="menu__item">
-                <a class="menu__link" href="#Home">
+            <ul className="menu">
+              <li className="menu__item">
+                <a className="menu__link" href="#Home">
                   Home
                 </a>
               </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#skills">
+              <li className="menu__item">
+                <a className="menu__link" href="#skills">
                   Skills
                 </a>
               </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#Projects">
+              <li className="menu__item">
+                <a className="menu__link" href="#Projects">
                   Projects
                 </a>
               </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#work experience">
+              <li className="menu__item">
+                <a className="menu__link" href="#work experience">
                   Experiences
                 </a>
               </li>
-              <li class="menu__item">
-                <a class="menu__link" href="#skills">
+              <li className="menu__item">
+                <a className="menu__link" href="#skills">
                   About
                 </a>
               </li>
-              <li class="menu__item">
-                <a class="menu__link" href="mailto:lahbariismail@gmail.com">
+              <li className="menu__item">
+                <a className="menu__link" href="mailto:lahbariismail@gmail.com">
                   Contact
                 </a>
               </li>
@@ -588,7 +587,7 @@ export default function Home() {
             src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
           ></script>
           <script
-            nomodule
+            noModule
             src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
           ></script>
         </footer>
