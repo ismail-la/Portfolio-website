@@ -1,16 +1,17 @@
 "use client";
+import "./globals.css";
 import React, { useState, useEffect, useRef } from "react";
 import Chatbot from "./components/Chatbot";
-import "./globals.css";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
+import Header from "./components/header"; // Import header
+import Hero from "./components/hero"; // Import Hero
+import Logos from "./components/logos"; // Import Logos
 import Projects from "./components/Projects";
 import Skills from "./components/skills"; // Import skills
 import WorkExperience from "./components/Work experience"; // Import Work experience
 import Footer from "./components/footer"; // Import footer
-import Hero from "./components/hero"; // Import Hero
-import Logos from "./components/logos"; // Import Logos
 import { useDarkMode } from "./components/DarkMod"; // Import dark mode hook
-import Header from "./components/header"; // Import header
+
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
