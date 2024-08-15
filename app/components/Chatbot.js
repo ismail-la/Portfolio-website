@@ -1,5 +1,6 @@
 // components/Chatbot.js
 import { useState, useEffect, useRef } from "react";
+import "./Chatbot.css";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -171,52 +172,58 @@ const Chatbot = () => {
   }, [messages]);
 
   return (
-    <div>
-      <button onClick={toggleChatbot} className="ChatbotToggleBtn">
-        <img src="./imgs/OIP.jpg" alt="Chatbot Button" />
-      </button>
-      {isOpen && (
-        <div className="ChatbotPopup">
-          <div className="ChatHeader">
-            Chatbot{" "}
-            <button onClick={toggleChatbot} className="CloseBtn">
-              &times;
-            </button>
-          </div>
-          <div className="ChatBox" ref={chatBoxRef}>
-            {messages.map((msg, index) => (
-              <div
-                key={index}
-                className={msg.sender === "user" ? "userMessage" : "botMessage"}
-              >
-                {msg.text}
+    <section id="Chatbot" className="Chatbot-container">
+      <div className="Chatbot">
+        <div>
+          <button onClick={toggleChatbot} className="ChatbotToggleBtn">
+            <img src="./imgs/OIP.jpg" alt="Chatbot Button" />
+          </button>
+          {isOpen && (
+            <div className="ChatbotPopup">
+              <div className="ChatHeader">
+                Chatbot{" "}
+                <button onClick={toggleChatbot} className="CloseBtn">
+                  &times;
+                </button>
               </div>
-            ))}
-          </div>
-          <div className="ChatInput">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onFocus={() => {
-                if (input === "Ask me anything") {
-                  setInput(""); // Clear the placeholder text on focus
-                }
-              }}
-              onKeyPress={(e) => e.key === "Enter" && handleSend()}
-              placeholder="Type a message..."
-            />
-            <button onClick={handleSend}>Send</button>
-          </div>
-          <div className="copyright">
-            <a target="_blank" rel="noopener noreferrer">
-              Build By Lahbari ismail © 2024
-            </a>
-          </div>
-          <audio ref={audioRef} src="/robot-sound.mp3" />
+              <div className="ChatBox" ref={chatBoxRef}>
+                {messages.map((msg, index) => (
+                  <div
+                    key={index}
+                    className={
+                      msg.sender === "user" ? "userMessage" : "botMessage"
+                    }
+                  >
+                    {msg.text}
+                  </div>
+                ))}
+              </div>
+              <div className="ChatInput">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onFocus={() => {
+                    if (input === "Ask me anything") {
+                      setInput(""); // Clear the placeholder text on focus
+                    }
+                  }}
+                  onKeyPress={(e) => e.key === "Enter" && handleSend()}
+                  placeholder="Type a message..."
+                />
+                <button onClick={handleSend}>Send</button>
+              </div>
+              <div className="copyright">
+                <a target="_blank" rel="noopener noreferrer">
+                  Build By Lahbari ismail © 2024
+                </a>
+              </div>
+              <audio ref={audioRef} src="/robot-sound.mp3" />
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+    </section>
   );
 };
 

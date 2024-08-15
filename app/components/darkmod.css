@@ -1,0 +1,108 @@
+/* components/darkmod.css */
+/* Dark mode */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode header {
+  background-color: #444;
+  color: #fff;
+}
+
+.dark-mode nav {
+  ul {
+    color: var(--base-100);
+    li {
+      a {
+        color: var(--base-100);
+        &:hover {
+          background: var(--base-100);
+        }
+      }
+    }
+  }
+  .mobile-toggle {
+    color: var(--base-800);
+  }
+}
+
+body.dark-mode {
+  background-color: #444;
+  color: #d8dbe0;
+}
+
+.dark-mode .hero-blue {
+  background-color: #333;
+}
+
+.dark-mode .hero-yellow {
+  background-color: #444;
+}
+
+.dark-mode .skills .holder-blue {
+  background-color: #444;
+}
+
+.dark-mode .work-experience .jobs article {
+  background-color: #444;
+}
+
+.dark-mode .project .project-grid a {
+  background-color: #333;
+}
+
+.dark-mode .ChatBox {
+  background-color: #333;
+}
+
+.dark-mode .footer {
+  background-color: #444;
+  color: #fff;
+}
+
+.dark-mode-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-mode-button .icon {
+  font-size: 24px;
+  color: var(--icon-color);
+}
+
+body.dark-mode .dark-mode-button .icon {
+  color: var(--icon-color-dark);
+}
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  /* Tablet */
+  .dark-mode-button {
+    padding: 10px;
+    top: 15px;
+    right: 15px;
+  }
+
+  #dark-mode-icon {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile */
+  .dark-mode-button {
+    padding: 6px;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    display: flex;
+  }
+
+  #dark-mode-icon {
+    font-size: 18px;
+  }
+}
