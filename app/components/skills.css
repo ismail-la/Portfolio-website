@@ -1,7 +1,7 @@
 /* skills.css */
 .skills {
   .holder-blue {
-    background-color: var(--yellow-100);
+   
     border-radius: 30px;
     padding: 30px;
     display: flex;
@@ -17,7 +17,7 @@
         margin-bottom: 20px;
         li {
           display: inline-block;
-          background-color: rgba(187, 136, 33, 0.856);
+          background-color: #3586ff;
           padding: 10px 20px;
           border-radius: 15px;
           margin-bottom: 20px;

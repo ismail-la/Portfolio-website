@@ -3,7 +3,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Chatbot from "./components/Chatbot";
 import "./globals.css";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
-import axios from "axios";
 import Projects from "./components/Projects";
 import Skills from "./components/skills"; // Import skills
 import WorkExperience from "./components/Work experience"; // Import Work experience
