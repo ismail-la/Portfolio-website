@@ -1,4 +1,3 @@
-
 /* footer */
 footer {
   position: relative;
@@ -118,5 +117,38 @@ footer {
   }
   100% {
     background-position-x: 0px;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .social-icon__link {
+    font-size: 1.5rem;
+    margin: 0 5px;
+  }
+
+  .menu__link {
+    font-size: 1rem;
+    margin: 0 5px;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-icon__link {
+    font-size: 1.2rem;
+    margin: 0 3px;
+  }
+
+  .menu__link {
+    font-size: 0.9rem;
+    margin: 0 3px;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
   }
 }
