@@ -1,6 +1,6 @@
-// components/darkmod.js
+// components/DarkMod.js
 import React, { useState } from "react";
-import "../components/darkmod.css"; // Import dark mode CSS
+import "../components/DarkMod.css"; // Import dark mode CSS
 
 export const useDarkMode = () => {
   const [darkMode, setDarkMode] = useState(false);

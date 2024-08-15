@@ -10,7 +10,7 @@ import WorkExperience from "./components/Work experience"; // Import Work experi
 import Footer from "./components/footer"; // Import footer
 import Hero from "./components/hero"; // Import Hero
 import Logos from "./components/logos"; // Import Logos
-import { useDarkMode } from "./components/darkmod"; // Import dark mode hook
+import { useDarkMode } from "./components/DarkMod"; // Import dark mode hook
 import Header from "./components/header"; // Import header
 
 export default function Home() {

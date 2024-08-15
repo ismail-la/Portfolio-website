@@ -1,7 +1,7 @@
 // components/header.js
 import React, { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
-import { useDarkMode } from "./darkmod"; // Import dark mode hook
+import { useDarkMode } from "./DarkMod"; // Import dark mode hook
 import "./header.css"; // Import header CSS
 
 const Header = () => {
