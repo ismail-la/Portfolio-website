@@ -67,9 +67,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-.projects-image .icon.show {
-  opacity: 1;
-}
+
 .projects-image:hover .icon {
   opacity: 1;
   top: 50%;

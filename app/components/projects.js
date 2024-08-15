@@ -10,17 +10,46 @@ import project5 from "../../public/imgs/project-5.png";
 import project6 from "../../public/imgs/project-6.png";
 import project7 from "../../public/imgs/project-7.png";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { useInView } from "framer-motion";
+
+const projectsData = [
+  { src: project1, link: "https://github.com/ismail-la/E-commerce-MVP" },
+  { src: project2, link: "https://github.com/ismail-la/AirBnB_clone" },
+  { src: project3, link: "" },
+  { src: project4, link: "" },
+  { src: project5, link: "" },
+  { src: project6, link: "" },
+  { src: project7, link: "" },
+];
+
+const ProjectItem = ({ src, link, isInView, index }) => (
+  <div
+    className="projects-image"
+    style={{
+      transform: isInView
+        ? "none"
+        : `translateX(${index % 2 === 0 ? "-200px" : "200px"})`,
+      opacity: isInView ? 1 : 0,
+      transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+    }}
+  >
+    <Image src={src} width={0} height={0} />
+    <a href={link} target="_blank">
+      <div className="icon">
+        <BsFillArrowUpRightCircleFill
+          size={100}
+          style={{ fill: "url(#gradient)" }}
+        />
+        <h3>Check out Project</h3>
+      </div>
+    </a>
+  </div>
+);
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [clickedImage, setClickedImage] = useState(null);
-
-  const handleImageClick = (index) => {
-    setClickedImage(index);
-  };
 
   return (
     <section id="projects" className="projects">
@@ -33,40 +62,13 @@ const Projects = () => {
 
       <h1 ref={ref}>Projects</h1>
       <div className="projects-container">
-        {[
-          project1,
-          project2,
-          project3,
-          project4,
-          project5,
-          project6,
-          project7,
-        ].map((project, index) => (
-          <div
+        {projectsData.map((project, index) => (
+          <ProjectItem
             key={index}
-            className="projects-image"
-            style={{
-              transform: isInView
-                ? "none"
-                : index % 2 === 0
-                ? "translateX(-200px)"
-                : "translateX(200px)",
-              opacity: isInView ? 1 : 0,
-              transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-            }}
-            onClick={() => handleImageClick(index)}
-          >
-            <Image src={project} width={0} height={0} />
-            <a href="#" target="_blank">
-              <div className={`icon ${clickedImage === index ? "show" : ""}`}>
-                <BsFillArrowUpRightCircleFill
-                  size={100}
-                  style={{ fill: "url(#gradient)" }}
-                />
-                <h3>Check out Project</h3>
-              </div>
-            </a>
-          </div>
+            {...project}
+            isInView={isInView}
+            index={index}
+          />
         ))}
       </div>
     </section>
