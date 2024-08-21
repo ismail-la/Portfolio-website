@@ -55,13 +55,13 @@ const Skills = () => {
         <div className="right-column">
           <h3>A bit about me</h3>
           <p>
-            Hi I'm Ismail I am a Software Engineer and Freelance Full-Stack Web
-            Developer with a strong focus on DevOps, generative AI, and UX/UI
-            design. I specialize in creating high-performance, innovative
-            software solutions and visually appealing, user-friendly websites.
-            Passionate about technology and continuous learning, I am excited to
-            collaborate with professionals and take on new challenges in the
-            tech industry.
+            Hi I'm Ismail I am a Junior Software Engineer and Freelance
+            Full-Stack Web Developer with a strong focus on DevOps, generative
+            AI, and UX/UI design. I specialize in creating high-performance,
+            innovative software solutions and visually appealing, user-friendly
+            websites. Passionate about technology and continuous learning, I am
+            excited to collaborate with professionals and take on new challenges
+            in the tech industry.
           </p>
         </div>
       </div>

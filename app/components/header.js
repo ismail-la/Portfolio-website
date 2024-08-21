@@ -1,9 +1,8 @@
-// components/header.js
 import React, { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
 import { useDarkMode } from "./DarkMod"; // Import dark mode hook
+import { motion } from "framer-motion";
 import "./header.css"; // Import header CSS
-
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -48,8 +47,14 @@ const Header = () => {
             <a href="#skills">About</a>
           </li>
           <li>
-            <a href="mailto:lahbariismail@gmail.com" className="button">
-              Contact
+            <a href="#contact">
+              <motion.button
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={(e) => {}}
+                onHoverEnd={(e) => {}}
+              >
+                Let's Talk
+              </motion.button>
             </a>
           </li>
         </ul>

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import "./Projects.css";
 import project1 from "../../public/imgs/project-1.png";
 import project2 from "../../public/imgs/project-2.png";
@@ -14,16 +15,52 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 
 const projectsData = [
-  { src: project1, link: "https://github.com/ismail-la/E-commerce-MVP" },
-  { src: project2, link: "https://github.com/ismail-la/AirBnB_clone" },
-  { src: project3, link: "" },
-  { src: project4, link: "" },
-  { src: project5, link: "" },
-  { src: project6, link: "" },
-  { src: project7, link: "" },
+  {
+    src: project1,
+    link: "https://github.com/ismail-la/E-commerce-MVP",
+    title: "E-commerce MVP",
+  },
+  {
+    src: project2,
+    link: "https://github.com/ismail-la/AirBnB_clone",
+    title: "AirBnB Clone",
+  },
+  {
+    src: project3,
+    link: "",
+    title: "JavaScript music player",
+  },
+  {
+    src: project4,
+    link: "",
+    title: "Chat application",
+  },
+  {
+    src: project5,
+    link: "",
+    title: "Work-out tracker",
+  },
+  {
+    src: project6,
+    link: "",
+    title: "Food delivery app",
+  },
+  {
+    src: project7,
+    link: "",
+    title: "ToDo list application",
+  },
 ];
 
-const ProjectItem = ({ src, link, isInView, index }) => (
+const ProjectItem = ({
+  src,
+  link,
+  isInView,
+  index,
+  handleTap,
+  isSelected,
+  title,
+}) => (
   <div
     className="projects-image"
     style={{
@@ -33,23 +70,32 @@ const ProjectItem = ({ src, link, isInView, index }) => (
       opacity: isInView ? 1 : 0,
       transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
     }}
+    onClick={() => handleTap(index)}
   >
     <Image src={src} width={0} height={0} />
-    <a href={link} target="_blank">
-      <div className="icon">
-        <BsFillArrowUpRightCircleFill
-          size={100}
-          style={{ fill: "url(#gradient)" }}
-        />
-        <h3>Check out Project</h3>
-      </div>
-    </a>
+    <div className={`icon ${isSelected ? "show" : ""}`}>
+      <BsFillArrowUpRightCircleFill
+        size={100}
+        style={{ fill: "url(#gradient)" }}
+      />
+      <h3>Check out Project</h3>
+      <h4>{title}</h4> {/* Display project title */}
+    </div>
   </div>
 );
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const handleTap = (index) => {
+    if (selectedProject === index) {
+      window.open(projectsData[index].link, "_blank");
+    } else {
+      setSelectedProject(index);
+    }
+  };
 
   return (
     <section id="projects" className="projects">
@@ -68,6 +114,8 @@ const Projects = () => {
             {...project}
             isInView={isInView}
             index={index}
+            handleTap={handleTap}
+            isSelected={selectedProject === index}
           />
         ))}
       </div>

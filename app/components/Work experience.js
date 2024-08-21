@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./Work experience.css";
 
-const WorkExperience = () => {
+const WorkExperience = ({ itemsPerPage = 3 }) => {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 3;
   const [expanded, setExpanded] = useState({});
 
-  const workplaces = [
+  const Workplaces = [
     {
-      imgSrc: "./imgs/workplace-4.jpg",
+      imgSrc: "./imgs/workplace-1.png",
       imgAlt: "Workplace1",
       figcaption: "Workplace1",
       title: "Freelance Full-stack software developer",
@@ -29,7 +28,7 @@ const WorkExperience = () => {
       `,
     },
     {
-      imgSrc: "./imgs/workplace-2.jpeg",
+      imgSrc: "./imgs/workplace-2.png",
       imgAlt: "Workplace2",
       figcaption: "Workplace2",
       title: "Software Engineer Intern",
@@ -46,7 +45,7 @@ const WorkExperience = () => {
       `,
     },
     {
-      imgSrc: "./imgs/ismail face work.png",
+      imgSrc: "./imgs/workplace-3.png",
       imgAlt: "Workplace3",
       figcaption: "Workplace3",
       title: "IT Engineer",
@@ -61,7 +60,7 @@ const WorkExperience = () => {
       `,
     },
     {
-      imgSrc: "./imgs/workplace-3.jpg",
+      imgSrc: "./imgs/workplace-4.png",
       imgAlt: "Workplace4",
       figcaption: "Workplace4",
       title: "Senior IT Technician",
@@ -80,17 +79,9 @@ const WorkExperience = () => {
     // Add more workplace items here if needed
   ];
 
-  const handlePrevious = () => {
-    if (currentPage > 0) {
-      setCurrentPage((prev) => prev - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentPage < Math.ceil(workplaces.length / itemsPerPage) - 1) {
-      setCurrentPage((prev) => prev + 1);
-    }
-  };
+  const startIndex = currentPage * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = Workplaces.slice(startIndex, endIndex);
 
   const toggleReadMore = (index) => {
     setExpanded((prev) => ({
@@ -99,16 +90,22 @@ const WorkExperience = () => {
     }));
   };
 
-  const startIndex = currentPage * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentItems = workplaces.slice(startIndex, endIndex);
+  const handlePrevious = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 0));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) =>
+      Math.min(prev + 1, Math.ceil(Workplaces.length / itemsPerPage) - 1)
+    );
+  };
 
   return (
     <section id="work experience" className="work-experience container">
       <h2>Work Experience</h2>
       <div className="jobs">
         {currentItems.map((workplace, index) => (
-          <article key={index}>
+          <article key={index} className={expanded[index] ? "expanded" : ""}>
             <figure>
               <div>
                 <img
@@ -138,7 +135,7 @@ const WorkExperience = () => {
         <button
           onClick={handleNext}
           disabled={
-            currentPage >= Math.ceil(workplaces.length / itemsPerPage) - 1
+            currentPage >= Math.ceil(Workplaces.length / itemsPerPage) - 1
           }
         >
           Next

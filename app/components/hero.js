@@ -1,5 +1,6 @@
 // hero.js
 import React from "react";
+import { motion, useInView } from "framer-motion";
 import "./hero.css";
 
 const Hero = () => {
@@ -19,14 +20,27 @@ const Hero = () => {
               deliver seamless and dynamic user experiences.
             </span>
           </p>
+       
+
           <div className="call-to-action">
-            <a href="./ISMAIL-LAHBARI-Resume.pdf" className="button black">
-              View Resume
-            </a>
-            <a href="mailto:lahbariismail@gmail.com" className="button white">
-              Contact Me
-            </a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              onHoverStart={(e) => {}}
+              onHoverEnd={(e) => {}}
+              href="./ISMAIL-LAHBARI-Resume.pdf"
+            >
+              <button>View Resume</button>
+            </motion.a>
+            <motion.a
+              href="mailto:lahbariismail@gmail.com"
+              whileHover={{ scale: 1.1 }}
+              onHoverStart={(e) => {}}
+              onHoverEnd={(e) => {}}
+            >
+              <button>Contact Me</button>
+            </motion.a>
           </div>
+
           <div className="social-links">
             <a href="https://github.com/ismail-la">
               <img src="./imgs/github.png" alt="GitHub" width="48" />

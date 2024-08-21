@@ -51,8 +51,26 @@
 }
 
 .projects .icon h3 {
+  color: #f8f4f4;
+  font-weight: 600;
+  font-size: 1rem; /* You can also adjust the font size here if needed */
+  text-align: center;
+}
+.projects .icon h4 {
+  color: rgb(59, 162, 202);
+  font-weight: 600;
+  font-size: 1.5rem; /* Smaller font size for the title */
+  text-align: center;
+  width: 300px;
+  
+  margin-top: 0.4rem; /* Add some spacing above the title */
+  margin-bottom: %;
+}
+.projects .icon p {
   color: white;
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 .projects-image:hover img {
@@ -78,5 +96,13 @@
 @media only screen and (max-width: 768px) {
   .projects-container {
     flex-direction: column;
+    .projects-image .icon {
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      transform: translate(-40%, -40%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
   }
 }

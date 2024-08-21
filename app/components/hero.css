@@ -18,6 +18,10 @@
       }
     }
     .call-to-action {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
       margin-top: 10px;
       margin-bottom: 10px;
       a {
@@ -25,6 +29,27 @@
         margin-bottom: 10px;
       }
     }
+
+    .call-to-action button:nth-child(1) {
+      padding: 0.5rem 2rem;
+      outline: none;
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 30px 10px;
+      cursor: pointer;
+    }
+
+    .call-to-action button:nth-child(2) {
+      padding: 0.5rem 2rem;
+      outline: none;
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 30px 10px;
+      cursor: pointer;
+    }
+
     .social-links {
       a {
         &:hover {
@@ -35,7 +60,7 @@
   }
   .hero-yellow {
     flex: 1;
-    background-color: rgba(68, 67, 64, 0.856);
+    background-color: #3e95b8;
     border-radius: 30px;
     padding: 0px 20px;
     display: flex;

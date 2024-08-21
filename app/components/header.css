@@ -3,11 +3,12 @@ header {
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
+  /*align-items: end;*/
   align-items: center;
   justify-content: space-between;
   max-width: 1440px;
   margin: auto;
-  border-bottom: 1px solid rgba(146, 93, 44, 0.1);
+  border-bottom: 1px solid rgba(74, 158, 81, 0.1);
 }
 
 header .logo-holder {
@@ -15,7 +16,7 @@ header .logo-holder {
   padding: 10px;
   font-weight: 600;
   align-items: center;
-  color: var(--base-800);
+  color: #1d221e;
 }
 
 header .logo-holder .logo {
@@ -23,7 +24,7 @@ header .logo-holder .logo {
   align-items: center;
   justify-content: center;
   font-size: 32px;
-  color: var(--base-100);
+  color: #15a138;
   height: 64px;
   width: 64px;
   margin-right: 20px;
@@ -43,8 +44,7 @@ header nav {
 header nav ul {
   display: flex;
   list-style-type: none;
-  gap: 5px;
-  color: var(--base);
+  color: var(--base-800);
 }
 
 header nav ul li {
@@ -56,17 +56,36 @@ header nav ul li a {
   padding: 10px 20px;
   color: var(--base-800);
 }
-
-header nav ul li a:hover {
-  background: var(--base-100);
-  border-radius: 10px;
-  text-decoration: none;
+header nav ul button {
+  background: #aeca2f;
+  background: -webkit-linear-gradient(to right, #5ba1c2, #26a531);
+  background: linear-gradient(to right, #5ba1c2, #5171b4);
+  color: white;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: transform 0.1s, color 0.1s; /* Add transition for smooth scaling and color change */
+  text-align: center;
 }
 
+header nav ul button.dark-mode-button {
+  background: transparent;
+  color: var(--base-800);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+header nav ul button.dark-mode-button:hover {
+  color: var(--primary-color);
+}
 header nav .mobile-toggle {
   display: none;
-  color: var(--base-800);
-  padding: 10px;
+  color: black;
 }
 
 @media (max-width: 1024px) {
@@ -80,10 +99,22 @@ header nav .mobile-toggle {
   header {
     flex-direction: column;
     align-items: center;
+    right: -100%;
+    z-index: 10;
+    transition: 0.3s;
+    width: 100%;
+  }
+  .nav-menu {
+    top: 4rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    right: -100%;
+    transition: 0.3s;
+    z-index: 10;
   }
 
   header nav {
-    margin-top: 10px;
     width: 100%;
   }
 
@@ -93,19 +124,29 @@ header nav .mobile-toggle {
     text-align: center;
     width: 100%;
   }
-
   header nav ul a {
     width: 100%;
   }
-
+  .nav-menu li {
+    padding: 1.5rem;
+  }
   header nav ul.active {
     display: flex;
   }
-
+  .nav-menu.active {
+    right: 0;
+  }
   header nav .mobile-toggle {
     display: inline-block;
     position: absolute;
-    top: 20px;
+    top: 25px;
     right: 20px;
+  }
+  /* Adjust dark mode button position */
+  header nav ul li .dark-mode-button {
+    position: absolute;
+    top: 25px;
+    right: 90%;
+    /* Position it on the left side */
   }
 }

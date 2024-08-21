@@ -9,7 +9,14 @@
   background-color: #444;
   color: #fff;
 }
-
+.dark-mode header nav ul li a:hover {
+  background: #7ac0ee;
+  background: -webkit-linear-gradient(to right, #5ba1c2, #3e40be);
+  background: linear-gradient(to right, #5ba1c2, #3341bb);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .dark-mode nav {
   ul {
     color: var(--base-100);
@@ -46,15 +53,29 @@ body.dark-mode {
 .dark-mode .skills .holder-blue .left-column ul li {
   background-color: #6e6d6d;
 }
+.dark-mode .work-experience {
+  background-color: #444;
+}
 .dark-mode .work-experience .jobs article {
   background-color: #444;
 }
-
+.dark-mode .work-experience .jobs article h3 {
+  color: var(--base-100);
+}
+.dark-mode .work-experience .jobs article div {
+  color: var(--base-100);
+}
 .dark-mode .projects {
   background-color: #444;
 }
 .dark-mode .projects-container {
   background-color: #444;
+}
+.dark-mode .contact {
+  background-color: #444;
+}
+.dark-mode .contact-container {
+  color: white;
 }
 .dark-mode .ChatBox {
   background-color: #444;
