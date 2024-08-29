@@ -75,6 +75,8 @@
 
 .projects-image:hover img {
   filter: brightness(50%);
+  transform: scale(1.05); /* Scale the image to 105% of its original size */
+  transition: transform 0.3s ease; /* Smooth transition for the scaling effect */
 }
 
 .projects-image .icon {

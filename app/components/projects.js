@@ -10,6 +10,7 @@ import project4 from "../../public/imgs/project-4.png";
 import project5 from "../../public/imgs/project-5.png";
 import project6 from "../../public/imgs/project-6.png";
 import project7 from "../../public/imgs/project-7.png";
+import project8 from "../../public/imgs/project-8.png";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
@@ -17,7 +18,7 @@ import { useInView } from "framer-motion";
 const projectsData = [
   {
     src: project1,
-    link: "https://github.com/ismail-la/E-commerce-MVP",
+    link: "https://lahbari-ismail.vercel.app/",
     title: "E-commerce MVP",
   },
   {
@@ -27,8 +28,8 @@ const projectsData = [
   },
   {
     src: project3,
-    link: "",
-    title: "JavaScript music player",
+    link: "https://github.com/ismail-la/E-commerce-MVP",
+    title: "Portfolio Website",
   },
   {
     src: project4,
@@ -49,6 +50,11 @@ const projectsData = [
     src: project7,
     link: "",
     title: "ToDo list application",
+  },
+  {
+    src: project8,
+    link: "",
+    title: "JavaScript music player",
   },
 ];
 
@@ -90,11 +96,19 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const handleTap = (index) => {
-    if (selectedProject === index) {
-      window.open(projectsData[index].link, "_blank");
+    if (isMobileOrTablet()) {
+      if (selectedProject === index) {
+        window.open(projectsData[index].link, "_blank");
+      } else {
+        setSelectedProject(index);
+      }
     } else {
-      setSelectedProject(index);
+      window.open(projectsData[index].link, "_blank");
     }
+  };
+
+  const isMobileOrTablet = () => {
+    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   };
 
   return (
