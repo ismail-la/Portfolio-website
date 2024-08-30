@@ -19,7 +19,7 @@ const projectsData = [
   {
     src: project1,
     link: "https://lahbari-ismail.vercel.app/",
-    title: "E-commerce MVP",
+    title: "Responsive Portfolio Website",
   },
   {
     src: project2,
@@ -29,7 +29,7 @@ const projectsData = [
   {
     src: project3,
     link: "https://github.com/ismail-la/E-commerce-MVP",
-    title: "Portfolio Website",
+    title: "E-commerce Website",
   },
   {
     src: project4,
