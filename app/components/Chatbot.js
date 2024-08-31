@@ -1,5 +1,5 @@
 // components/Chatbot.js
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Chatbot.css";
 
 const Chatbot = () => {

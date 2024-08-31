@@ -4,14 +4,14 @@ import "./globals.css";
 import React, { useState, useEffect, useRef } from "react";
 import Chatbot from "./components/Chatbot";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
-import Header from "./components/Header"; // Import header
-import Hero from "./components/Hero"; // Import Hero
-import Logos from "./components/Logos"; // Import Logos
+import Header from "./components/header"; // Import header
+import Hero from "./components/hero"; // Import Hero
+import Logos from "./components/logos"; // Import Logos
 import Projects from "./components/Projects";
-import Skills from "./components/Skills"; // Import skills
+import Skills from "./components/skills"; // Import skills
 import WorkExperience from "./components/Work experience"; // Correct import path
 import Contact from "./components/Contact"; // Import Contact
-import Footer from "./components/Footer"; // Import footer
+import Footer from "./components/footer"; // Import footer
 import { useDarkMode } from "./components/DarkMod"; // Import dark mode hook
 import { LanguageProvider } from "./components/LanguageContext"; // Correct import path
 
