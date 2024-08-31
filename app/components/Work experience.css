@@ -200,11 +200,36 @@
     flex-direction: column; /* Ensure articles are displayed in a column */
     align-items: center;
   }
+  .work-experience h2 {
+    text-align: center; /* Center align the heading */
+    margin: 0 auto; /* Ensure margin is auto for centering */
+    width: 100%; /* Ensure the heading takes full width */
+    font-size: 1.9em; /* Adjust the font size as needed */
+  }
 
   .jobs article {
     width: 100%; /* Ensure articles take full width of the container */
     margin: 10px 0;
     height: auto; /* Adjust height as needed */
+  }
+  .jobs h3 {
+    font-size: 1.2em; /* Reduce font size for h3 */
+  }
+
+  .jobs div {
+    font-size: 1em; /* Reduce font size for div */
+  }
+
+  .jobs p {
+    font-size: 0.9em; /* Reduce font size for p */
+  }
+
+  .read-more {
+    font-size: 0.9em; /* Reduce font size for read-more link */
+  }
+
+  .navigation-buttons button {
+    font-size: 0.9em; /* Reduce font size for navigation buttons */
   }
 }
 
