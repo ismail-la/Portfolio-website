@@ -3,7 +3,6 @@ header {
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
-  /*align-items: end;*/
   align-items: center;
   justify-content: space-between;
   max-width: 1440px;
@@ -56,6 +55,7 @@ header nav ul li a {
   padding: 10px 20px;
   color: var(--base-800);
 }
+
 header nav ul button {
   background: #aeca2f;
   background: -webkit-linear-gradient(to right, #5ba1c2, #26a531);
@@ -67,7 +67,7 @@ header nav ul button {
   letter-spacing: 1px;
   cursor: pointer;
   border-radius: 30px;
-  transition: transform 0.1s, color 0.1s; /* Add transition for smooth scaling and color change */
+  transition: transform 0.1s, color 0.1s;
   text-align: center;
 }
 
@@ -83,6 +83,25 @@ header nav ul button.dark-mode-button {
 header nav ul button.dark-mode-button:hover {
   color: var(--primary-color);
 }
+
+header nav ul button.language-button {
+  background: #ffcc00;
+  color: #333;
+  padding: 0.3rem 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: transform 0.1s, color 0.1s;
+  text-align: center;
+  margin-left: 10px;
+}
+
+header nav ul button.language-button:hover {
+  background: #ff9900;
+  color: white;
+}
+
 header nav .mobile-toggle {
   display: none;
   color: black;
@@ -104,15 +123,6 @@ header nav .mobile-toggle {
     transition: 0.3s;
     width: 100%;
   }
-  .nav-menu {
-    top: 4rem;
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
-    right: -100%;
-    transition: 0.3s;
-    z-index: 10;
-  }
 
   header nav {
     width: 100%;
@@ -124,29 +134,29 @@ header nav .mobile-toggle {
     text-align: center;
     width: 100%;
   }
-  header nav ul a {
-    width: 100%;
-  }
-  .nav-menu li {
-    padding: 1.5rem;
-  }
+
   header nav ul.active {
     display: flex;
   }
-  .nav-menu.active {
-    right: 0;
+
+  header nav ul li {
+    padding: 1.5rem;
   }
+
+  header nav ul li a {
+    width: 100%;
+  }
+
   header nav .mobile-toggle {
     display: inline-block;
     position: absolute;
     top: 25px;
     right: 20px;
   }
-  /* Adjust dark mode button position */
+
   header nav ul li .dark-mode-button {
     position: absolute;
     top: 25px;
     right: 90%;
-    /* Position it on the left side */
   }
 }

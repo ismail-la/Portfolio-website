@@ -1,8 +1,11 @@
 // footer.js
 import React from "react";
+import { useLanguage } from "./LanguageContext"; // Import useLanguage hook
 import "./footer.css";
 
 const Footer = () => {
+  const { language } = useLanguage(); // Use useLanguage hook
+
   return (
     <footer className="footer">
       <div className="waves">
@@ -34,36 +37,39 @@ const Footer = () => {
       <ul className="menu">
         <li className="menu__item">
           <a className="menu__link" href="#Home">
-            Home
+            {language === "en" ? "Home" : "Accueil"}
           </a>
         </li>
         <li className="menu__item">
           <a className="menu__link" href="#skills">
-            Skills
+            {language === "en" ? "Skills" : "Compétences"}
           </a>
         </li>
         <li className="menu__item">
           <a className="menu__link" href="#projects">
-            Projects
+            {language === "en" ? "Projects" : "Projets"}
           </a>
         </li>
         <li className="menu__item">
           <a className="menu__link" href="#work experience">
-            Experiences
+            {language === "en" ? "Experiences" : "Expériences"}
           </a>
         </li>
         <li className="menu__item">
           <a className="menu__link" href="#skills">
-            About
+            {language === "en" ? "About" : "À propos"}
           </a>
         </li>
         <li className="menu__item">
           <a className="menu__link" href="mailto:lahbariismail@gmail.com">
-            Contact
+            {language === "en" ? "Contact" : "Contact"}
           </a>
         </li>
       </ul>
-      <p>&copy;2024 Lahbari Ismail | All Rights Reserved</p>
+      <p>
+        &copy;2024 Lahbari Ismail |{" "}
+        {language === "en" ? "All Rights Reserved" : "Tous droits réservés"}
+      </p>
     </footer>
   );
 };

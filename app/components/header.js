@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLanguage } from "./LanguageContext";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
 import { useDarkMode } from "./DarkMod"; // Import dark mode hook
 import { motion } from "framer-motion";
@@ -7,6 +8,7 @@ import "./header.css"; // Import header CSS
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, toggleDarkMode] = useDarkMode(); // Use dark mode hook
+  const { language, toggleLanguage } = useLanguage(); // Use language from context
 
   const toggleMobileMenu = () => {
     setMenuOpen(!menuOpen);
@@ -22,7 +24,9 @@ const Header = () => {
             width="48"
           />
         </div>
-        <div className="logo-text">Portfolio Website</div>
+        <div className="logo-text">
+          {language === "en" ? "Portfolio Website" : "Site Web de Portfolio"}
+        </div>
       </a>
       <nav>
         <ul id="menu" className={menuOpen ? "active" : ""}>
@@ -32,19 +36,26 @@ const Header = () => {
             </button>
           </li>
           <li>
-            <a href="#Home">Home</a>
+            <button className="language-button" onClick={toggleLanguage}>
+              {language === "en" ? "FR" : "EN"}
+            </button>
           </li>
           <li>
-            <a href="#skills">Skills</a>
+            <a href="#Home">{language === "en" ? "Home" : "Accueil"}</a>
           </li>
           <li>
-            <a href="#projects">Projects</a>
+            <a href="#skills">{language === "en" ? "Skills" : "Compétences"}</a>
           </li>
           <li>
-            <a href="#work experience">Experiences</a>
+            <a href="#projects">{language === "en" ? "Projects" : "Projets"}</a>
           </li>
           <li>
-            <a href="#skills">About</a>
+            <a href="#work experience">
+              {language === "en" ? "Experiences" : "Expériences"}
+            </a>
+          </li>
+          <li>
+            <a href="#skills">{language === "en" ? "About" : "À propos"}</a>
           </li>
           <li>
             <a href="#contact">
@@ -53,7 +64,7 @@ const Header = () => {
                 onHoverStart={(e) => {}}
                 onHoverEnd={(e) => {}}
               >
-                Let's Talk
+                {language === "en" ? "Let's Talk" : "Parlons"}
               </motion.button>
             </a>
           </li>

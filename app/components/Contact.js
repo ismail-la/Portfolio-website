@@ -3,9 +3,11 @@ import React, { useState, useRef } from "react";
 import { useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useLanguage } from "./LanguageContext"; // Import useLanguage hook
 import "./Contact.css";
 
 export const Contact = () => {
+  const { language } = useLanguage(); // Use language from context
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const form = useRef();
@@ -19,7 +21,11 @@ export const Contact = () => {
     e.preventDefault();
 
     if (!recaptchaToken) {
-      alert("Please complete the reCAPTCHA");
+      alert(
+        language === "en"
+          ? "Please complete the reCAPTCHA"
+          : "Veuillez compléter le reCAPTCHA"
+      );
       return;
     }
 
@@ -34,6 +40,11 @@ export const Contact = () => {
         console.log(result.text);
         form.current.reset();
         setRecaptchaToken(""); // Reset the token after sending the email
+        alert(
+          language === "en"
+            ? "Thank you for your message. It has been sent."
+            : "Merci pour votre message. Il a été envoyé."
+        ); // Show success alert
       })
       .catch((error) => {
         console.log(error.text);
@@ -52,9 +63,16 @@ export const Contact = () => {
           }}
         >
           <h1>
-            Let's Chat. <br /> Tell me about your project.
+            {language === "en" ? "Let's Chat." : "Discutons."} <br />{" "}
+            {language === "en"
+              ? "Tell me about your project."
+              : "Parlez-moi de votre projet."}
           </h1>
-          <span>Let's create something together ✨</span>
+          <span>
+            {language === "en"
+              ? "Let's create something together ✨"
+              : "Créons quelque chose ensemble ✨"}
+          </span>
         </div>
         <form
           ref={form}
@@ -66,30 +84,44 @@ export const Contact = () => {
           }}
         >
           <div className="form-heading">
-            <h1>Send me a message</h1>
+            <h1>
+              {language === "en"
+                ? "Send me a message"
+                : "Envoyez-moi un message"}
+            </h1>
             <span>🚀</span>
           </div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">{language === "en" ? "Name:" : "Nom:"}</label>
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="Enter your name"
+            placeholder={
+              language === "en" ? "Enter your name" : "Entrez votre nom"
+            }
             required
           />
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">
+            {language === "en" ? "Email:" : "Email:"}
+          </label>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="Enter your email"
+            placeholder={
+              language === "en" ? "Enter your email" : "Entrez votre email"
+            }
             required
           />
-          <label htmlFor="message">Message:</label>
+          <label htmlFor="message">
+            {language === "en" ? "Message:" : "Message:"}
+          </label>
           <textarea
             id="message"
             name="message"
-            placeholder="message for contact"
+            placeholder={
+              language === "en" ? "Enter your message" : "Entrez votre message"
+            }
             required
           ></textarea>
 
@@ -98,7 +130,9 @@ export const Contact = () => {
             onChange={handleRecaptchaChange}
           />
 
-          <button type="submit">Send</button>
+          <button type="submit">
+            {language === "en" ? "Send" : "Envoyer"}
+          </button>
         </form>
       </div>
     </div>
