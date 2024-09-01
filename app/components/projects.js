@@ -25,7 +25,7 @@ const projectsData = [
   },
   {
     src: project2,
-    link: "https://github.com/ismail-la/AirBnB_clone",
+    link: "https://github.com/ismail-la/AirBnB_clone_v4",
     title: { en: "AirBnB Clone", fr: "Clone d'AirBnB" },
   },
   {
