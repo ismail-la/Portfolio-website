@@ -9,6 +9,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
 
   const Workplaces = [
     {
+      id: 1,
       imgSrc: "./imgs/workplace-1.png",
       imgAlt: "Workplace1",
       figcaption: "Workplace1",
@@ -49,6 +50,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
       },
     },
     {
+      id: 2,
       imgSrc: "./imgs/workplace-2.png",
       imgAlt: "Workplace2",
       figcaption: "Workplace2",
@@ -79,6 +81,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
       },
     },
     {
+      id: 3,
       imgSrc: "./imgs/workplace-3.png",
       imgAlt: "Workplace3",
       figcaption: "Workplace3",
@@ -107,6 +110,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
       },
     },
     {
+      id: 4,
       imgSrc: "./imgs/workplace-4.png",
       imgAlt: "Workplace4",
       figcaption: "Workplace4",
@@ -138,6 +142,70 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
         `,
       },
     },
+    {
+      id: 5,
+      imgSrc: "./imgs/workplace-5.png",
+      imgAlt: "Workplace5",
+      figcaption: "Workplace5",
+      title: {
+        en: "IT Infrastructure Engineer",
+        fr: "Ingénieur en infrastructure informatique",
+      },
+      date: "2017-2018",
+      description: {
+        en: `
+          - During my internship, I optimized and enhanced OCP Group's IT infrastructure by:
+          <br /> - Conducting a comprehensive assessment of the existing infrastructure.
+          <br /> - Implementing performance optimizations, including load balancing and hardware upgrades.
+          <br /> - Enhancing security measures, in collaboration with the IT security team.
+          <br /> - Assisting in virtualization deployment and cloud integration.
+          <br /> - Developing disaster recovery plans.
+          <br /> - Documenting improvements and training the IT team.
+          <br /> Outcome: The project improved infrastructure performance, reliability, and scalability, reducing operational costs and supporting the company's growth.
+        `,
+        fr: `
+          - Au cours de mon stage, j'ai optimisé et amélioré l'infrastructure informatique du Groupe OCP en :
+        <br /> - Réalisant une évaluation complète de l'infrastructure existante.
+        <br /> - Implémentant des optimisations de performances, notamment l'équilibrage de charge et les mises à niveau matérielles.
+        <br /> - Renforçant les mesures de sécurité, en collaboration avec l'équipe de sécurité informatique.
+        <br /> - Assistant au déploiement de la virtualisation et à l'intégration du cloud.
+        <br /> - Élaborant des plans de reprise après sinistre.
+        <br /> - Documentant les améliorations et formant l'équipe informatique.
+        <br Résultat : Le projet a amélioré les performances, la fiabilité et l'évolutivité de l'infrastructure, réduisant ainsi les coûts opérationnels et soutenant la croissance de l'entreprise.
+        `,
+      },
+    },
+    {
+      id: 6,
+      imgSrc: "./imgs/workplace-6.png",
+      imgAlt: "Workplace6",
+      figcaption: "Workplace6",
+      title: {
+        en: "Automation Engineer",
+        fr: "Ingénieur en automatisation",
+      },
+      date: "2015-2016",
+      description: {
+        en: `
+          - During my internship, I led the modernization of automation and supervision systems for a key fertilizer and phosphate handling unit using Siemens S7-300 PLCs and Simatic Step7.
+          <br /> - Developed and optimized PLC programs to improve process efficiency and reliability.
+          <br /> - Integrated new automation solutions with existing systems, ensuring minimal downtime.
+          <br /> - Upgraded supervision systems for real-time monitoring and control.
+          <br /> - Collaborated with cross-functional teams to meet technical and safety standards.
+          <br /> - Conducted thorough testing and validation for a smooth transition to the new setup.
+          <br /> Outcome: This project deepened my expertise in industrial automation, control systems, and project management.
+        `,
+        fr: `
+         - Au cours de mon stage, j'ai dirigé la modernisation des systèmes d'automatisation et de supervision d'une unité clé de manutention d'engrais et de phosphates en utilisant des automates Siemens S7-300 et Simatic Step7.
+        <br /> - Développé et optimisé des programmes PLC pour améliorer l'efficacité et la fiabilité des processus.
+        <br /> - Intégré de nouvelles solutions d'automatisation aux systèmes existants, garantissant des temps d'arrêt minimes.
+        <br /> - Systèmes de supervision mis à niveau pour une surveillance et un contrôle en temps réel.
+        <br /> - Collaboré avec des équipes interfonctionnelles pour respecter les normes techniques et de sécurité.
+        <br /> - Réalisé des tests et une validation approfondis pour une transition en douceur vers la nouvelle configuration.
+        <br /> Résultat : Ce projet a approfondi mon expertise en automatisation industrielle, systèmes de contrôle et gestion de projet.
+        `,
+      },
+    },
     // Add more workplace items here if needed
   ];
 
@@ -145,10 +213,10 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
   const endIndex = startIndex + itemsPerPage;
   const currentItems = Workplaces.slice(startIndex, endIndex);
 
-  const toggleReadMore = (index) => {
+  const toggleReadMore = (id) => {
     setExpanded((prev) => ({
       ...prev,
-      [index]: !prev[index],
+      [id]: !prev[id],
     }));
   };
 
@@ -168,8 +236,11 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
         {language === "en" ? "Work Experience" : "Expérience Professionnelle"}
       </h2>
       <div className="jobs">
-        {currentItems.map((workplace, index) => (
-          <article key={index} className={expanded[index] ? "expanded" : ""}>
+        {currentItems.map((workplace) => (
+          <article
+            key={workplace.id}
+            className={expanded[workplace.id] ? "expanded" : ""}
+          >
             <figure>
               <div>
                 <img
@@ -183,13 +254,16 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
             <h3>{workplace.title[language]}</h3>
             <div>{workplace.date}</div>
             <p
-              className={expanded[index] ? "expanded" : ""}
+              className={expanded[workplace.id] ? "expanded" : ""}
               dangerouslySetInnerHTML={{
                 __html: workplace.description[language],
               }}
             />
-            <span className="read-more" onClick={() => toggleReadMore(index)}>
-              {expanded[index]
+            <span
+              className="read-more"
+              onClick={() => toggleReadMore(workplace.id)}
+            >
+              {expanded[workplace.id]
                 ? language === "en"
                   ? "Read Less"
                   : "Lire Moins"
