@@ -10,6 +10,40 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
   const Workplaces = [
     {
       id: 1,
+      imgSrc: "./imgs/workplace-0.png",
+      imgAlt: "Workplace1",
+      figcaption: "Workplace1",
+      title: {
+        en: "Full Stack Engineer & CloudOps",
+        fr: "Ingénieur Full Stack & CloudOps",
+      },
+      date: "2024-2025",
+      description: {
+        en: `
+          ✔ My responsibilities will include:
+          <br /> - Full-Stack Development: Designed and implemented scalable front-end and back-end solutions using React, Next.js, Django, FastAPI, TypeScript, Python, and Node.js, ensuring high performance and efficiency for applications in carbon credits, sustainable energy, and agriculture.
+          <br /> - AI & Automation: Integrated GPT models and multi-AI agents to enhance decision-making and automate workflows, leveraging AI to support sustainable practices.
+          <br /> - Cloud Infrastructure & DevOps: Deployed and managed cloud resources on Microsoft Azure, configuring PostgreSQL, MySQL, and SQL databases, and implementing CI/CD pipelines to streamline deployments and system updates.
+          <br /> - Performance Optimization & Security: Implemented CI/CD pipelines, optimized database performance, improved application efficiency, addressed security vulnerabilities, and ensured scalability and reliability.
+          <br /> - Agile Collaboration: Worked in an Agile/Scrum environment, contributing to product development, feature enhancements, and cross-functional teamwork to drive sustainability-focused initiatives.
+          <br /> - Database management and cloud computing.
+          <br /> - Project management from concept to deployment.
+        `,
+        fr: `
+          ✔ Mes responsabilités incluront :
+          <br /> - Développement Full-Stack : conception et mise en œuvre de solutions front-end et back-end évolutives à l'aide de React, Next.js, Django, FastAPI, TypeScript, Python et Node.js, garantissant des performances et une efficacité élevées pour les applications dans les domaines des crédits carbone, de l'énergie durable et de l'agriculture.
+          <br /> - IA et automatisation : modèles GPT intégrés et agents multi-IA pour améliorer la prise de décision et automatiser les flux de travail, en tirant parti de l'IA pour soutenir les pratiques durables.
+          <br /> - Infrastructure cloud et DevOps : déploiement et gestion des ressources cloud sur Microsoft Azure, configuration des bases de données PostgreSQL, MySQL et SQL, et mise en œuvre de pipelines CI/CD pour rationaliser les déploiements et les mises à jour du système.
+          <br /> - Développement de solutions personnalisées.
+          <br /> - Optimisation des performances et sécurité : mise en œuvre de pipelines CI/CD, optimisation des performances de la base de données, amélioration de l'efficacité des applications, correction des vulnérabilités de sécurité et garantie de l'évolutivité et de la fiabilité.
+          <br /> - Collaboration agile : j'ai travaillé dans un environnement Agile/Scrum, contribuant au développement de produits, aux améliorations de fonctionnalités et au travail d'équipe interfonctionnel pour mener des initiatives axées sur la durabilité.
+          <br /> - Gestion de base de données et cloud computing.
+          <br /> - Gestion de projet du concept au déploiement.
+        `,
+      },
+    },
+    {
+      id: 2,
       imgSrc: "./imgs/workplace-1.png",
       imgAlt: "Workplace1",
       figcaption: "Workplace1",
@@ -50,7 +84,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
       },
     },
     {
-      id: 2,
+      id: 3,
       imgSrc: "./imgs/workplace-2.png",
       imgAlt: "Workplace2",
       figcaption: "Workplace2",
@@ -81,7 +115,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
       },
     },
     {
-      id: 3,
+      id: 4,
       imgSrc: "./imgs/workplace-3.png",
       imgAlt: "Workplace3",
       figcaption: "Workplace3",
@@ -110,7 +144,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
       },
     },
     {
-      id: 4,
+      id: 5,
       imgSrc: "./imgs/workplace-4.png",
       imgAlt: "Workplace4",
       figcaption: "Workplace4",
@@ -143,7 +177,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
       },
     },
     {
-      id: 5,
+      id: 6,
       imgSrc: "./imgs/workplace-5.png",
       imgAlt: "Workplace5",
       figcaption: "Workplace5",
@@ -176,7 +210,7 @@ const WorkExperience = ({ itemsPerPage = 3 }) => {
       },
     },
     {
-      id: 6,
+      id: 7,
       imgSrc: "./imgs/workplace-6.png",
       imgAlt: "Workplace6",
       figcaption: "Workplace6",

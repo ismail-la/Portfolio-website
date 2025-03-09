@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLanguage } from "./LanguageContext";
 import { FaSun, FaMoon } from "react-icons/fa"; // Import icons
-import { useDarkMode } from "./DarkMod"; // Import dark mode hook
+import { useDarkMode } from "./darkmod"; // Import dark mode hook
 import { motion } from "framer-motion";
 import "./header.css"; // Import header CSS
 

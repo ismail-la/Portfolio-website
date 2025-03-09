@@ -4,7 +4,7 @@ import { useInView } from "framer-motion";
 import { useLanguage } from "./LanguageContext";
 import Image from "next/image";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
-import "./Projects.css";
+import "./projects.css";
 import project1 from "../../public/imgs/project-1.png";
 import project2 from "../../public/imgs/project-2.png";
 import project3 from "../../public/imgs/project-3.png";

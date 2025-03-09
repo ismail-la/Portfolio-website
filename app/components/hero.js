@@ -17,12 +17,12 @@ const Hero = () => {
           </h1>
           <p>
             {language === "en"
-              ? "Welcome to my portfolio! I am a Junior Software Engineer."
-              : "Bienvenue sur mon portfolio ! Je suis un ingénieur logiciel junior."}
+              ? "Welcome to my portfolio! I am a Software Engineer."
+              : "Bienvenue sur mon portfolio ! Je suis un ingénieur logiciel."}
             <span>
               {language === "en"
-                ? "I craft innovative and responsive web solutions with expertise in front-end development, AI integration, and full architecture to deliver seamless and dynamic user experiences."
-                : "Je crée des solutions web innovantes et réactives avec une expertise en développement front-end, intégration de l'IA et architecture complète pour offrir des expériences utilisateur fluides et dynamiques."}
+                ? "Specializing in Full-Stack Development, Cloud & DevOps, and AI-driven solutions. With expertise in front-end and back-end development, SaaS architecture, and AI integration, I build scalable and efficient web applications that deliver seamless user experiences."
+                : "Spécialisé en développement full-stack, Cloud & DevOps, et solutions basées sur l'IA. Grâce à mon expertise en développement front-end et back-end, architecture SaaS et intégration de l'IA, je conçois des applications web évolutives et performantes offrant une expérience utilisateur fluide."}
             </span>
           </p>
 
